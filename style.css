@@ -1,0 +1,215 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f0f5fa;
+  color: #5a3a32;/*字体颜色*/
+  line-height: 1.6;
+}
+
+/* 开屏星空层 */
+.splash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #050814;
+  z-index: 50;
+  transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+.splash.hide {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+#stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.splash-text {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  z-index: 51;
+}
+.splash-text h1 {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+.splash-text p {
+  font-size: 18px;
+  color: #ccc;
+}
+
+.splash-hint {
+  position: absolute;
+  left: 50%;
+  bottom: 40px;
+  transform: translateX(-50%);
+  color: #fff;
+  font-size: 14px;
+  z-index: 51;
+  animation: bounce 2s infinite;
+}
+@keyframes bounce {
+  0%,100%{transform:translateX(-50%) translateY(0);}50%{transform:translateX(-50%) translateY(6px);}
+}
+
+/* 页面内容 */
+.page {
+  padding-bottom: 60px;
+}
+/*上标*/
+.nav {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 24px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  font-weight: 600;
+}
+.links {
+  display: flex;
+  gap: 20px;
+  font-size: 15px;
+  color: #5a3a32;;
+}
+
+/*首页标题*/
+.hero {
+  max-width: 700px;
+  margin: 40px auto 60px;
+  padding: 0 20px;
+  text-align: center;
+}
+.hero h1 {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+.hero p {
+  color: #5a3a32;;
+}
+/*正文模块*/
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  gap: 30px;
+}
+/*正文-目录 模块*/
+.sidebar {
+  width: 180px;
+  flex-shrink: 0;
+  background: #fff;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 40px;
+  height: fit-content;
+}
+.sidebar h4 {
+  margin-bottom: 12px;
+  font-size: 16px;
+}
+.sidebar ul {
+  list-style: none;
+  display: grid;
+  gap: 8px;
+}
+.sidebar a {
+  text-decoration: none;
+  color: #5A2626;
+  font-size: 14px;
+}
+
+/*正文-文章 模块*/
+.articles {
+  flex: 1;
+  display: grid;
+  gap: 24px;
+}
+
+/*方框*/
+.card {
+  background: #fff;
+  padding: 28px;
+  border-radius: 20px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  transition: transform 0.2s;
+}
+.card:hover {
+  transform: translateY(-4px);
+}
+.card h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+.card p {
+  color: #666;
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+.card span {
+  font-size: 13px;
+  color: #aaa;
+}
+
+/*每日一句*/
+/* 每日一句白色卡片 */
+.quote-card {
+  background: #ffffff;    /* 白色背景 */
+  border-radius: 12px;    /* 圆角，更温柔 */
+  padding: 20px 25px;     /* 内边距 */
+  margin: 20px 0;         /* 外面留间距 */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05); /* 微弱阴影，高级感 */
+  border: 1px solid #eaeaea; /* 细边框，更挺括 */
+}
+
+#footer {
+  text-align: center;     /* 居中 */
+  margin-top: 60px;       /* 离上面远一点 */
+  padding: 30px 0;        /* 上下内边距 */
+  color: #888;            /* 灰色文字（必须！不然看不见）*/
+  font-size: 14px;
+}
+
+/* 点击出现的黄色星星 */
+.star {
+  position: fixed;
+  z-index: 9999;
+  pointer-events: none;
+  font-size: 28px;    /* 星星大小 */
+  color: #ffd700;     /* 金黄色 */
+  animation: star 0.7s ease forwards;
+}
+
+@keyframes star {
+  0% {
+    transform: scale(0.5);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-30px) scale(1.2);
+    opacity: 0;
+  }
+}

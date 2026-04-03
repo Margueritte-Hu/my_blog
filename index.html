@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>🌾我的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- 星空开屏层 -->
+<div class="splash" id="splash">
+  <canvas id="stars"></canvas>
+  <div class="splash-text">
+    <h1>生活与技术的碎片</h1>
+    <p>记录时间，也被时间记录</p>
+  </div>
+  <div class="splash-hint">向下滑动进入博客</div>
+</div>
+
+<!-- 博客内容 -->
+<div class="page">
+  <div class="nav">
+    <div class="logo">我的博客</div>
+    <div class="links">
+      <a>首页</a>
+      <a>归档</a>
+      <a>关于</a>
+    </div>
+  </div>
+
+  <div class="hero">
+    <h1>🪴我的小站，纪录时间</h1>
+    <p>花有重开日，人无再少年</p>
+  </div>
+
+  <div class="container">
+    <aside class="sidebar">
+      <h4>目录</h4>
+      <ul>
+        <li><a href="#a2">技术学习</a></li>
+        <li><a href="#a3">极简风格心得</a></li>
+        <li><a href="#a1">我的种植日记</a></li>
+      </ul>
+    </aside>
+
+    <main class="articles">
+      <div class="card" id="a2">
+        <h3>技术学习</h3>
+        <p>实现了漂浮图标和卡片效果</p>
+        <span>2026-04-03</span>
+      </div>
+      <div class="card" id="a3">
+        <h3>极简风格心得</h3>
+        <p>好看的网站，往往越简单越高级</p>
+        <span>2026-04-03</span>
+      </div>
+      <div class="card" id="a1">
+        <h3 link="my.makdown">我的种植日记🫐</h3>
+        <p>记录一下我的无花果和蓝莓</p>
+        <span>2026-04-03</span>
+      </div>
+    </main>
+  </div>
+
+    <!-- 每日一句 -->
+     <div class="quote-card">
+        每日一句：
+        <div id="quote">
+        每日一句加载中...
+    <div>
+     </div>
+    
+</div>
+    <!-- 把 footer 放在 .container 外面！！！ -->
+    <footer id="footer" style="display:block;text-align:center;margin-top:60px;padding:20px;color:#666;">
+    ©2026 个人小站
+    </footer>
+
+
+
+<!--点击就出现星星-->
+<script>
+document.addEventListener('click', e => {
+  const span = document.createElement('span');
+  span.className = 'star';
+  span.textContent = '✨';
+  span.style.left = e.clientX - 14 + 'px';
+  span.style.top = e.clientY - 14 + 'px';
+  document.body.appendChild(span);
+  setTimeout(() => span.remove(), 700);
+});
+</script>
+<script src="main.js"></script>
+</body>
+</html>
