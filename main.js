@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 星星
   const stars = [];
-  const count = 700;
+  const count = 2000;
   for (let i = 0; i < count; i++) {
     stars.push({
       x: Math.random() * canvas.width,
@@ -61,3 +61,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+//每日一句
+const quotes = [
+  "慢慢来，谁不是摸着石头过河。",
+  "技术是生活的工具，不是枷锁。",
+  "保持简单，就是最高级的复杂。",
+  "今天也要认真生活，认真写代码。",
+  "安静努力，不必声张。",
+  "把日子过成自己喜欢的样子。"
+];
+
+    const q = document.getElementById("quote");
+    q.innerHTML = quotes[Math.floor(Math.random() * quotes.length)];
